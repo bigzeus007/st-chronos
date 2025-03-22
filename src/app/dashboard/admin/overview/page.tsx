@@ -1,6 +1,6 @@
 "use client";
 import useRole from "@/hooks/useRole";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation"; // <-- Correction ICI
 
 export default function AdminOverview() {
   const { user, role, loading } = useRole();
@@ -9,7 +9,7 @@ export default function AdminOverview() {
   if (loading) return <div>Chargement...</div>;
 
   if (!user || role !== "admin") {
-    router.push("/login");
+    router.replace("/login"); // recommandation : utilise router.replace pour éviter l'historique inutile
     return null;
   }
 
