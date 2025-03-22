@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 // Notez le chemin relatif : on remonte de deux dossiers pour aller de `src/app` à la racine,
 // puis on entre dans le dossier `lib`
-import { auth } from "../../lib/firebase";
+import { auth } from "../services/firebase";
 import Image from "next/image";
 
 export default function Home() {
