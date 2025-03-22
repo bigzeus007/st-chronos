@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 // Notez le chemin relatif : on remonte de deux dossiers pour aller de `src/app` à la racine,
 // puis on entre dans le dossier `lib`
+import useRoleRedirect from "@/hooks/useRoleRedirect";
 import { auth } from "../services/firebase";
 import Image from "next/image";
 
 export default function Home() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  useRoleRedirect();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {

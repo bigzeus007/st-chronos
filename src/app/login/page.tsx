@@ -1,6 +1,6 @@
 // app/login/page.tsx
 "use client";
-import { signInWithGoogle } from "@/lib/auth";
+import { signInWithGoogle } from "@/services/auth";
 import { useState } from "react";
 
 export default function Login() {
