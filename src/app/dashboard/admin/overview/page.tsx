@@ -1,6 +1,7 @@
 "use client";
 import useRole from "@/hooks/useRole";
-import { useRouter } from "next/navigation"; // <-- Correction ICI
+import { useRouter } from "next/navigation"; 
+import DashboardStats from '../../../../../components/admin/dashboard/DashboardStats';
 
 export default function AdminOverview() {
   const { user, role, loading } = useRole();
@@ -16,7 +17,7 @@ export default function AdminOverview() {
   return (
     <div>
       <h1 className="text-xl font-bold">Dashboard Admin</h1>
-      <p>Bienvenue, {user.displayName}</p>
+      <DashboardStats />
     </div>
   );
 }
